@@ -104,14 +104,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Libs\SFML-2.6.1\include;$(SolutionDir)\imgui\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <AdditionalIncludeDirectories>C:\Libs\SFML-2.6.1\include;$(SolutionDir)\imgui\;C:\Libs\libtorch\include\torch\csrc\api\include;C:\Libs\libtorch\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Libs\SFML-2.6.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-main-d.lib;sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;%(AdditionalDependencies);opengl32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Libs\SFML-2.6.1\lib;C:\Libs\libtorch\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-main-d.lib;sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;%(AdditionalDependencies);opengl32.lib;nvfuser_codegen.lib;pytorch_jni.lib;torch.lib;torch_cuda.lib;torch_cpu.lib;fbjni.lib;caffe2_nvrtc.lib;c10_cuda.lib;dnnl.lib;c10.lib;kineto.lib;fmtd.lib;fbgemm.lib;asmjit.lib;XNNPACK.lib;cpuinfo.lib;clog.lib;pthreadpool.lib;libprotocd.lib;libprotobufd.lib;libprotobuf-lited.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -122,16 +122,16 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Libs\SFML-2.6.1\include;$(SolutionDir)\imgui\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <AdditionalIncludeDirectories>C:\Libs\SFML-2.6.1\include;$(SolutionDir)\imgui\;C:\Libs\libtorch\include\torch\csrc\api\include;C:\Libs\libtorch\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Libs\SFML-2.6.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-main.lib;sfml-window.lib;sfml-graphics.lib;sfml-system.lib;%(AdditionalDependencies);opengl32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Libs\SFML-2.6.1\lib;C:\Libs\libtorch\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-main.lib;sfml-window.lib;sfml-graphics.lib;sfml-system.lib;%(AdditionalDependencies);opengl32.lib;torch.lib;c10.lib;c10_cuda.lib;caffe2_nvrtc.lib;torch_cuda.lib;c10.lib;c10_cuda.lib;caffe2_nvrtc.lib;torch.lib;torch_cuda.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

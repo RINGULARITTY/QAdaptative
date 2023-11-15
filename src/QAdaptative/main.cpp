@@ -5,6 +5,9 @@
 #include "imgui.h"
 #include "imgui-SFML.h"
 
+#include <torch/torch.h>
+
+#include <iostream>
 #include <random>
 #include <string>
 
@@ -12,7 +15,32 @@ inline std::string vect2fToString(const sf::Vector2f& v) {
     return "(" + std::to_string(v.x) + ", " + std::to_string(v.y) + ")";
 }
 
+inline void testTorch() {
+    if (torch::cuda::is_available()) {
+        std::cout << "CUDA est disponible! Entraînement sur GPU." << std::endl;
+
+        // Crée un tensor simple
+        torch::Tensor tensor = torch::rand({ 2, 3 });
+
+        // Affiche le tensor
+        std::cout << "Tensor avant transfert sur GPU:" << std::endl;
+        std::cout << tensor << std::endl;
+
+        // Transfère le tensor sur le GPU
+        tensor = tensor.to(torch::kCUDA);
+
+        // Affiche le tensor après transfert sur GPU
+        std::cout << "Tensor après transfert sur GPU:" << std::endl;
+        std::cout << tensor << std::endl;
+    }
+    else {
+        std::cout << "CUDA n'est pas disponible. Entraînement sur CPU." << std::endl;
+    }
+}
+
 int main() {
+    testTorch();
+
     sf::RenderWindow window(sf::VideoMode(1280, 720), "QAdaptative");
     window.setFramerateLimit(60);
     sf::Clock deltaClock;
