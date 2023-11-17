@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tree Visualization Navigation</title>
+<style>
+  body {
+    padding: 20px;
+    text-align: center;
+  }
+  iframe {
+    width: 100%;
+    height: 80vh;
+    border: none;
+  }
+  #sliderContainer {
+    margin: 20px 0;
+  }
+  #timeSlider {
+    width: 95%;
+    margin: 0 auto;
+  }
+  #frameIndicator {
+    margin: 10px 0;
+  }
+</style>
+<script>
+  var currentFrame = 0;
+  var maxFrame = 5;
+  var delay = 1500;
+  var playInterval;
+
+  function updateVisualization(time) {
+    var iframe = document.getElementById('visualizationFrame');
+    var frameIndicator = document.getElementById('frameIndicator');
+    iframe.src = './frames/tree_visualization_time_' + time + '.html';
+    frameIndicator.innerText = 'Frame: ' + time;
+    document.getElementById('timeSlider').value = time;
+    currentFrame = time;
+  }
+
+  function play() {
+    if (playInterval) clearInterval(playInterval);
+
+    playInterval = setInterval(function() {
+      currentFrame++;
+      if (currentFrame >= maxFrame) {
+        clearInterval(playInterval);
+        currentFrame = maxFrame;
+      }
+      updateVisualization(currentFrame);
+    }, delay);
+  }
+
+  window.onload = function() {
+    updateVisualization(0);
+  };
+</script>
+</head>
+<body>
+
+<div id="sliderContainer">
+  <input type="range" id="timeSlider" min="0" max="5" value="0" step="1"
+    onchange="updateVisualization(parseInt(this.value))">
+  <button onclick="play()">Play</button>
+  <div id="frameIndicator">Frame: 0</div>
+</div>
+
+<iframe id="visualizationFrame" src="./frames/tree_visualization_time_0.html"></iframe>
+
+</body>
+</html>
