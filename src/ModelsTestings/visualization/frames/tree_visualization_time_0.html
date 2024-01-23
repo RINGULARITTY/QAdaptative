@@ -282,7 +282,7 @@ function highlightFilter(filter) {
                   
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": 0, "label": "Attack", "shape": "dot", "size": 10, "title": "Amount: 0\nRedo at time 0: 0.1"}, {"color": "#97c2fc", "id": 1, "label": "Block", "shape": "dot", "size": 10, "title": "Amount: 0\nRedo at time 0: 0.4"}, {"color": "#97c2fc", "id": 2, "label": "Dodge", "shape": "dot", "size": 10, "title": "Amount: 0\nRedo at time 0: 0.78"}]);
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": 0, "label": "Wait", "shape": "dot", "size": 10, "title": "Amount: 0\nRedo at time 0: 0.1"}, {"color": "#97c2fc", "id": 1, "label": "Build", "shape": "dot", "size": 10, "title": "Amount: 0\nRedo at time 0: 0.4"}, {"color": "#97c2fc", "id": 2, "label": "Upgrade", "shape": "dot", "size": 10, "title": "Amount: 0\nRedo at time 0: 0.78"}]);
                   edges = new vis.DataSet([{"arrows": "to", "from": 0, "label": "0.1", "to": 0, "width": 1}, {"arrows": "to", "from": 0, "label": "0.7", "to": 1, "width": 1}, {"arrows": "to", "from": 0, "label": "0.65", "to": 2, "width": 1}, {"arrows": "to", "from": 1, "label": "0.4", "to": 1, "width": 1}, {"arrows": "to", "from": 1, "label": "0.3", "to": 0, "width": 1}, {"arrows": "to", "from": 1, "label": "0.9", "to": 2, "width": 1}, {"arrows": "to", "from": 2, "label": "0.78", "to": 2, "width": 1}, {"arrows": "to", "from": 2, "label": "0.1", "to": 1, "width": 1}, {"arrows": "to", "from": 2, "label": "0.45", "to": 0, "width": 1}]);
 
                   nodeColors = {};
